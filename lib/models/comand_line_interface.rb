@@ -9,6 +9,7 @@ def help
  - help: displays this message
  - camp: tells you what camp a fighter belongs to
  - weight-class: tells you what weight class a fighter is in
+ - best camps: tells you which camp is best for a given weight class
  - camp specialties: tells you about a camp's weight class specialties
  - FIGHT: accepts two fighters and determines if they can fight one another
  - exit: terminates the program"
@@ -33,6 +34,11 @@ def ufc_app
      puts "Please enter a fighter's full name"
      fighter_name = gets.chomp.titleize
      puts WeightClass.find_by(id: Fighter.find_by(name: fighter_name)[:weight_class_id])[:class_name]
+     break if (anything_else? == 'please exit')
+   when 'best camps'
+     puts "Enter a weight class"
+     weight_class_input = gets.chomp.titleize
+     top_camps_per_weight_class(weight_class_input)
      break if (anything_else? == 'please exit')
    when 'camp specialties'
      puts "Enter a camp name"

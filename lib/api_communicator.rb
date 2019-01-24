@@ -29,6 +29,26 @@ def camp_specialties(camp_name)
    puts camps_weight_class_specialty
 end
 
+def top_camps_per_weight_class(weight_class_input)
+  weight_class_instances = WeightClass.select{|wc_attr| wc_attr.class_name == weight_class_input}
+  weight_class_instance_ids = weight_class_instances.map {|weight_class| weight_class.id }
+  weight_class_array = []
+  weight_class_instance_ids.each do |wc_id|
+    weight_class_array << Fighter.find_by(weight_class_id: wc_id)
+  end
+  camp_array = []
+  weight_class_array.each do |c_id|
+    camp_array << Camp.find_by(id: c_id)
+  end
+  camp_hash = Hash.new(0)
+  camp_array.each do |c|
+    camp_hash[c.camp_name] += 1
+  end
+  best_camps = camp_hash.map {|camps, value| camps}
+  puts best_camps.sort[0..2]
+end
+
+
 def anything_else?
   puts "Anything else you'd like to know?"
   puts "[Y/N]"
