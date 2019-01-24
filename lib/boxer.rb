@@ -1,10 +1,3 @@
-def camps(fighter)
-  puts "Please enter a fighter's full name"
-  camps_id = Fighter.find_by(name: fighter)[:camp_id]
-  Camps.find_by(id: camps_id)
-
-end
-
 def animation
    10.times do
   i = 1
@@ -16,3 +9,5 @@ def animation
     end
   end
 end
+
+animation
