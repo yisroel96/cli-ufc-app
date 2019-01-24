@@ -44,10 +44,17 @@ def top_camps_per_weight_class(weight_class_input)
   camp_array.each do |c|
     camp_hash[c.camp_name] += 1
   end
-  best_camps = camp_hash.map {|camps, value| camps}
-  puts best_camps.sort[0..2]
+  # best_camps = camp_hash.max_by {|camps, value| value}[0]
+  best_camps = ((camp_hash.sort_by{|key, value| value}.reverse).to_h).keys[0..2]
+  puts best_camps
 end
 
+def destroy_fighter_by(column, some_instance)
+  instance_of_fighter_id = Fighter.find_by(column => some_instance)[:id]
+  Fighter.where(column => some_instance).destroy_all
+  WeightClass.where(id: instance_of_fighter_id).destroy_all
+  Camp.where(id: instance_of_fighter_id).destroy_all
+end
 
 def anything_else?
   puts "Anything else you'd like to know?"
@@ -59,5 +66,6 @@ def anything_else?
     return 'please exit'
   else
     puts "Please enter y or n"
+    anything_else?
   end
 end
