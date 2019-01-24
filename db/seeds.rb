@@ -6,7 +6,7 @@ Fighter.destroy_all
 WeightClass.destroy_all
 Camp.destroy_all
 
-og = RestClient.get('https://script.googleusercontent.com/macros/echo?user_content_key=-h1xREVgne3dGW5RajP1KMoedw7wDDuHxgD1h0yuHdrHLKjl6Akc0KKe56Bst6v3kuS2qvDL3MalSBiDqdwj6CicEOzQUbPrm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnPsHbo7_pNEtT3vLX2y9ZmltLP4YI_OoZHoMd7uFWAK5DhZg0YL3efvxFOT2B0blggegiHP2Ryw5&lib=MagvpSEBNFRfA8U-lFEyQPWiPUb_TAeKa')
+og = RestClient.get('https://script.googleusercontent.com/macros/echo?user_content_key=agz7b2JTBMDYhw-jYgZJJ54X_VNhNWk-se2KK5rq12Dk3ganuH3auz429vq4S_qmKW0emWTJLhkeZ_5mWai2Za3mvtD_Wqjum5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnPsHbo7_pNEtT3vLX2y9ZmltLP4YI_OoZHoMd7uFWAK5DhZg0YL3efvxFOT2B0blggegiHP2Ryw5&lib=MagvpSEBNFRfA8U-lFEyQPWiPUb_TAeKa')
 ufc_hash = JSON.parse(og)["user"]
 ufc_hash.each do |fighter|
   Fighter.create!(fighter)

@@ -1,9 +1,8 @@
 require_relative '../config/environment'
 
-welcome
-help
-user_selection
+ufc_app
+
+puts "Thanks for fighting!"
 
 
-binding.pry
-puts "HELLO WORLD"
+# binding.pry

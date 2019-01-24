@@ -14,28 +14,47 @@ def help
  - exit: terminates the program"
 end
 
-def exit_app
-  puts "Thanks for fighting."
-end
-
-def user_selection
+def ufc_app
+  welcome
+  help
  command = ""
  while command
- puts "Please enter a valid command"
+ puts "Please enter a command"
  command = gets.chomp
  case command
    when 'help'
      help
    when 'camps'
-     camps(fighter)
+     puts "Please enter a fighter's full name"
+     fighter_name = gets.chomp
+     puts Camp.find_by(id: Fighter.find_by(name: fighter_name)[:camp_id])[:camp_name]
+     break if (anything_else? == 'please exit')
    when 'weight-class'
-     weight_class(fighter)
+     puts "Please enter a fighter's full name"
+     fighter_name = gets.chomp
+     puts WeightClass.find_by(id: Fighter.find_by(name: fighter_name)[:weight_class_id])[:class_name]
+     break if (anything_else? == 'please exit')
    when 'camp-spec'
-     camp_spec(camp_name)
+     puts "Enter a camp name"
+     camp_name = gets.chomp
+     camp_specialties(camp_name)
+     break if (anything_else? == 'please exit')
    when 'FIGHT'
-     fight(fighter_one, fighter_two)
+     puts "Please enter a fighter's full name"
+     fighter_one = gets.chomp
+     fighter_one_weight_class = WeightClass.find_by(id: Fighter.find_by(name: fighter_one)[:weight_class_id])[:class_name]
+     puts "Please enter another fighter's full name"
+     fighter_two = gets.chomp
+     fighter_two_weight_class = WeightClass.find_by(id: Fighter.find_by(name: fighter_two)[:weight_class_id])[:class_name]
+     if fighter_one == fighter_two
+       puts "#{fighter_one} would never fight their twin"
+     elsif (fighter_one_weight_class == fighter_two_weight_class) && (fighter_one != fighter_two)
+        puts "Let's get it on!"
+     else
+       puts "These fighters are not in the same weight class"
+     end
+     break if (anything_else? == 'please exit')
    when 'exit'
-     exit_app
      break
    else
      puts "Please enter a valid command"
