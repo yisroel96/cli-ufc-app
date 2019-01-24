@@ -15,14 +15,25 @@ def sign_up
   else
     puts "Please enter a password"
     user_password_attempt = gets.chomp.downcase
-    user_password = Password.create(password_entry: user_password_attempt)
+    user_password = Password.create(password_entry: user_password_attempt, user_id: new_user[:id])
   end
 end
 
-# def log_in
-#
-#
-# end
+def log_in
+  puts "please enter your username"
+  username_entry_one = gets.chomp.downcase
+  if User.find_by(user_name: username_entry_one) == nil
+    puts "please enter a valid username"
+    log_in
+  else
+    puts "please enter your password"
+    password_entry_one = gets.chomp.downcase
+    if Password.find_by(password_entry: password_entry_one)[:user_id] != User.find_by(user_name: username_entry_one)[:id]
+      puts "please try your log-in credentials again"
+      log_in
+    end
+  end
+end
 
 
 def help
