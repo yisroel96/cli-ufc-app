@@ -22,12 +22,26 @@ def animation_duo
   end
 end
 
-def animation_intro
+def animation_ufc
+  1.times do
   i = 1
-    while i == 1
+    while i < 2
       print "\033[2J"
-      File.foreach("hidden/ufc_logo/#{i}.rb") { |f| puts f }
+      File.foreach("hidden/ufc/#{i}.rb") { |f| puts f }
       sleep(2.0)
       i += 1
+    end
   end
 end
+
+# def animation_belt
+#   1.times do
+#   i = 1
+#     while i < 2
+#       print "\033[2J"
+#       File.foreach("hidden/belt/#{i}.rb") { |f| puts f }
+#       sleep(2.0)
+#       i += 1
+#     end
+#   end
+# end
