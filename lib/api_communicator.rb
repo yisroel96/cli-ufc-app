@@ -56,6 +56,10 @@ def destroy_fighter_by(column, some_instance)
   Camp.where(id: instance_of_fighter_id).destroy_all
 end
 
+def update_weight(wc_change_name, new_weight, new_wc)
+  WeightClass.update((Fighter.find_by(name: wc_change_name)[:id]), weight: new_weight, class_name: new_wc)
+end
+
 def anything_else?
   puts "*********************************"
   puts "Return to main menu?"

@@ -45,6 +45,7 @@ def help
  - help: displays this message
  - camp: tells you what camp a fighter belongs to
  - weight-class: tells you what weight class a fighter is in
+ - update weight: updates a given fighter's weight and weight class
  - FIGHT: accepts two fighters and determines if they can fight one another
  - best camps: tells you the top 3 best camps for a given weight class
  - camp specialties: tells you about a camp's weight class specialties
@@ -86,6 +87,16 @@ def ufc_app
        ufc_app
      end
       break if (anything_else? == 'please exit')
+   when 'update weight'
+     puts "Enter a fighter's full name"
+     #wc_change_name, new_weight, new_wc
+     wc_change_name = gets.chomp
+     puts "Enter #{wc_change_name}'s updated weight"
+     new_weight = gets.chomp.to_i
+     puts "Enter #{wc_change_name}'s updated weight class"
+     new_wc = gets.chomp.titleize
+     update_weight(wc_change_name, new_weight, new_wc)
+     break if (anything_else? == 'please exit')
    when 'best camps'
      puts "Enter a weight class"
      weight_class_input = gets.chomp.titleize
@@ -170,7 +181,7 @@ def ufc_app
      puts "Your Fighter suffered a KO"
      break if (anything_else? == 'please exit')
    when 'log out'
-     account?
+     break
    when 'exit'
      break
    else
@@ -179,8 +190,3 @@ def ufc_app
    end
  end
 end
-
-#
-# def camps(fighter)
-#
-# end
