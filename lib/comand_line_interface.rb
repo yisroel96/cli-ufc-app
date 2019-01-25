@@ -131,7 +131,8 @@ def ufc_app
      puts "Enter the fighter's #{column} to delete that fighter"
      some_instance = gets.chomp
      destroy_fighter_by(column, some_instance)
-     ################ animation_duo ###################
+     animation_duo
+     puts "Your Fighter suffered a KO"
      break if (anything_else? == 'please exit')
    when 'log out'
      account?
