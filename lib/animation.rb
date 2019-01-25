@@ -1,5 +1,5 @@
 def animation_solo
-  12.times do
+  6.times do
   i = 1
     while i < 13
       print "\033[2J"
