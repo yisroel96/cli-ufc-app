@@ -1,6 +1,7 @@
 # What do we want to allow our users to do?
 
 def welcome
+  animation_ufc
   puts "IIIIIIIIT'S TIIIIIIIMMMMEEEEEE!"
 end
 
@@ -118,8 +119,12 @@ def ufc_app
         fight_odds = rand(10)
         if fight_odds >= 5
           puts "#{fighter_one} is the undisputed #{fighter_one_weight_class} champion of the world"
+          puts " "
+          animation_belt
         else
           puts "#{fighter_two} is the undisputed #{fighter_two_weight_class} champion of the world"
+          puts " "
+          animation_belt
         end
      elsif fighter_one_weight_class != fighter_two_weight_class
        puts "These fighters are not in the same weight class"
