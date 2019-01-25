@@ -1,9 +1,7 @@
 # What do we want to allow our users to do?
 
 def welcome
-
   animation_ufc
-  animation_intro
   puts " "
   puts "IIIIIIIIT'S TIIIIIIIMMMMEEEEEE!"
 end
