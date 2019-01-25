@@ -1,4 +1,4 @@
-puts "
+
 
 
 
@@ -19,6 +19,3 @@ puts "
                   `o+:-...--/oss-                     `-/+///ossyhhhyyo.
                   +ssssyyyysssssy+`                      -syhyyyyyyyyyyho`
                  :yssssssssssysssss:                   `ohyyyyyyyyyyyyyyyh/
-
-
-"

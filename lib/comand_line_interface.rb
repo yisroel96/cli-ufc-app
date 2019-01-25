@@ -107,7 +107,7 @@ def ufc_app
      fighter_one = gets.chomp
      fighter_one_weight_class = WeightClass.find_by(id: Fighter.find_by(name: fighter_one)[:weight_class_id])[:class_name]
      puts "Please enter another fighter's full name"
-     fighter_two = gets.chomp.titleize
+     fighter_two = gets.chomp
      fighter_two_weight_class = WeightClass.find_by(id: Fighter.find_by(name: fighter_two)[:weight_class_id])[:class_name]
      if fighter_one == fighter_two
        puts "#{fighter_one} would never fight their twin"
@@ -132,7 +132,7 @@ def ufc_app
      some_instance = gets.chomp
      destroy_fighter_by(column, some_instance)
      animation_duo
-     puts "Your Fighter suffered a KO"
+     ######puts "Your Fighter suffered a KO"#########
      break if (anything_else? == 'please exit')
    when 'log out'
      account?

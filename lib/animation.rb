@@ -11,9 +11,9 @@ def animation_solo
 end
 
 def animation_duo
-  12.times do
+  6.times do
   i = 1
-    while i < 10
+    while i < 22
       print "\033[2J"
       File.foreach("hidden/ascii_animation_2/#{i}.rb") { |f| puts f }
       sleep(0.05)
