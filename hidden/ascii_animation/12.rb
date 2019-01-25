@@ -1,4 +1,4 @@
-puts "
+
 
                                 :oos+:`
                                +yyyyyy:
@@ -19,4 +19,3 @@ puts "
              :hddddhhhhyyyyyyy/
              `+yhhhhdhhhhyyooo/
                   `.--..`
-"

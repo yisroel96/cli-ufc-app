@@ -3,7 +3,7 @@ require_relative '../config/environment'
 puts "Welcome to the UFC"
 puts " "
 def account?
-  puts "Already have an account? [Y/N]"
+  puts "Already have an account? [Y/N] (Q to quit)"
     init_input = gets.chomp.upcase
     if init_input == 'Y'
       log_in

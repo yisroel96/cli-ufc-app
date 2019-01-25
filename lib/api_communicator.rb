@@ -57,7 +57,8 @@ def destroy_fighter_by(column, some_instance)
 end
 
 def anything_else?
-  puts "Anything else you'd like to know?"
+  puts "*********************************"
+  puts "Return to main menu?"
   puts "[Y/N]"
   y_or_n = gets.chomp.upcase
   if y_or_n == 'Y'

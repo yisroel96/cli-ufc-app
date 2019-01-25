@@ -1,4 +1,4 @@
-puts "
+
 
 
 
@@ -20,4 +20,3 @@ puts "
              `+hdddhhyyyyyyyo
               `/ssyyyyyss+-``
                  ``
-"
