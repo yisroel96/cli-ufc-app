@@ -1,12 +1,10 @@
 # What do we want to allow our users to do?
 
 def welcome
-<<<<<<< HEAD
+
   animation_ufc
-=======
   animation_intro
   puts " "
->>>>>>> bfb1bdc8ad6e612c66bb69432344693bf51af8d7
   puts "IIIIIIIIT'S TIIIIIIIMMMMEEEEEE!"
 end
 
