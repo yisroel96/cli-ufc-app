@@ -1,7 +1,7 @@
 # What do we want to allow our users to do?
 
 def welcome
- puts "IIIIIIIIT'S TIIIIIIIMMMMEEEEEE!"
+  puts "IIIIIIIIT'S TIIIIIIIMMMMEEEEEE!"
 end
 
 def sign_up
@@ -31,6 +31,7 @@ def log_in
     if Password.find_by(password_entry: password_entry_one)[:user_id] != User.find_by(user_name: username_entry_one)[:id]
       puts "please try your log-in credentials again"
       log_in
+
     end
   end
 end
@@ -46,17 +47,18 @@ def help
  - create fighter: creates a new fighter when given the fighters NAME, NICKNAME, CITY, COUNTRY, HEIGHT(in inches), WEIGHT, WEIGHT CLASS, and CAMP
  - FIGHT: accepts two fighters and determines if they can fight one another
  - delete fighter: removes a fighter from the database
+ - log out: logs out of your account
  - exit: terminates the program"
 end
 
 def ufc_app
   welcome
   help
- command = ""
- while command
- puts "Please enter a command"
- command = gets.chomp
- case command
+  command = ""
+  while command
+  puts "Please enter a command"
+  command = gets.chomp
+  case command
    when 'help'
      help
    when 'camp'
@@ -111,6 +113,7 @@ def ufc_app
        puts "#{fighter_one} would never fight their twin"
      elsif (fighter_one_weight_class == fighter_two_weight_class) && (fighter_one != fighter_two)
         puts "Let's get it on!"
+        animation_solo
         puts "#{fighter_one} vs. #{fighter_two}"
         fight_odds = rand(10)
         if fight_odds >= 5
@@ -128,7 +131,10 @@ def ufc_app
      puts "Enter the fighter's #{column} to delete that fighter"
      some_instance = gets.chomp
      destroy_fighter_by(column, some_instance)
+     ################ animation_duo ###################
      break if (anything_else? == 'please exit')
+   when 'log out'
+     account?
    when 'exit'
      break
    else
